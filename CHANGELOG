@@ -3,6 +3,11 @@ v0.1 05-04-2016
 [+] Capacidad para detectar si un archivo PKM debe ser
 convertido o no.
 
+v0.2 05-04-2016
+----------------
+[+] Capacidad para obtener todo el contenido del archivo
+y grabar el valido al archivo 'output'.
+
 ----------------
 [+] Añadido
 [-] Eliminado
