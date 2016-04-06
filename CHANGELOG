@@ -8,6 +8,13 @@ v0.2 05-04-2016
 [+] Capacidad para obtener todo el contenido del archivo
 y grabar el valido al archivo 'output'.
 
+v0.3 06-04-2016
+----------------
+[+] Puede convertir completamente archivos .pkm de versiones
+anteriores de Poketty a la última versión (1.3).
+[+] Puede reconstruir un archivo si este es incompatible o
+corrupto.
+
 ----------------
 [+] Añadido
 [-] Eliminado
