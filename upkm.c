@@ -23,7 +23,7 @@
 /* fcl.h */
 #include "../fcl.h"
 
-/* upkm v0.3 */
+/* upkm v0.3.1 */
 
 /* Poketty Version 1.3 */
 #define VERSION "1.3"
@@ -100,25 +100,20 @@ void make_pkm(char *input, char *output)
 	}
 }
 
-int upkm(int argc, char **argv)
+int upkm(char *input, char *output)
 {
 	int result = 0;
-	if (argc < 3) {
-		printf("Uso: %s input.pkm output.pkm\n", argv[0]);
+	char pkm[64];
+	if ((get_value_string(input, "pkm", pkm)) == 0 && (strcmp(pkm, VERSION)) == 0) {
+		printf("Tu archivo ya es compatible con Poketty %s y no debe ser convertido\n", VERSION);
 	}
 	else {
-		char pkm[64];
-		if ((get_value_string(argv[1], "pkm", pkm)) == 0 && (strcmp(pkm, VERSION)) == 0) {
-			printf("Tu archivo ya es compatible con Poketty %s y no debe ser convertido\n", VERSION);
+		if ((get_value_string(input, "nombre", pkm)) == 0) {
+			make_pkm(input, output);
 		}
 		else {
-			if ((get_value_string(argv[1], "nombre", pkm)) == 0) {
-				make_pkm(argv[1], argv[2]);
-			}
-			else {
-				printf("El archivo '%s' es incompatible con Poketty 1.0\n", argv[1]);
-				result--;
-			}
+			printf("El archivo '%s' es incompatible con Poketty 1.0\n", input);
+			result--;
 		}
 	}
 	return result;

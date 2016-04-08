@@ -15,9 +15,17 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+#include <stdio.h>
 #include "upkm.h"
 
 int main(int argc, char **argv)
 {
-	return upkm(argc, argv);
+	int ret = -1;
+	if (argc < 3) {
+		printf("Uso: %s input.pkm output.pkm\n", argv[0]);
+	}
+	else {
+		ret = upkm(argv[1], argv[2]);
+	}
+	return ret;
 } 

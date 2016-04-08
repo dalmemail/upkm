@@ -19,6 +19,6 @@
 #ifndef UPKM_H
 #define UPKM_H
 
-int upkm(int argc, char **argv);
+int upkm(char *input, char *output);
 
 #endif
